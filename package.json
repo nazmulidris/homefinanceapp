@@ -4,11 +4,12 @@
   "description": "Web app that visualizes Chase credit card data (in CSV format)",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.16.3",
     "npm": "^6.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
