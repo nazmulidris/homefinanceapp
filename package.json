@@ -1,0 +1,23 @@
+{
+  "name": "homefinanceapp",
+  "version": "1.0.0",
+  "description": "Web app that visualizes Chase credit card data (in CSV format)",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazmulidris/homefinanceapp.git"
+  },
+  "author": "Nazmul & Maret Idris",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nazmulidris/homefinanceapp/issues"
+  },
+  "homepage": "https://github.com/nazmulidris/homefinanceapp#readme"
+}
