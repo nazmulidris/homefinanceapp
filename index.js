@@ -24,7 +24,7 @@ app.listen(3000,
 function defaultRoute(request, response) {
   let query  = request.param("q");
   let user   = request.param("u");
-  let result = `defaultRoute: Request from user "${user}", query is "${query}"`;
+  let result = `[/]: Request from user "${user}", query is "${query}"`;
   console.log(result);
   response.send(result);
 }
@@ -38,12 +38,15 @@ function defaultRoute(request, response) {
  */
 function otherRoute(request, response) {
   let loc = request.param("loc");
-  switch(loc){
-    case "94301": loc = "Palo Alto"; break;
-    case "94040": loc = "Mountain View"; break;
+  switch (loc) {
+    case "94301":
+      loc = "Palo Alto";
+      break;
+    case "94040":
+      loc = "Mountain View";
+      break;
   }
-  
-  let result = `otherRoute: Request with location "${loc}"`;
+  let result = `[/other/]: Request with location "${loc}"`;
   console.log(result);
   response.send(result);
 }
