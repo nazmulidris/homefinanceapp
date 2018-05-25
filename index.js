@@ -1,21 +1,23 @@
 //
 // Boilerplate to setup express server
 //
+
 const express = require("express");
 const app     = express();
+const port    = process.env.PORT || 3000;
 
 app.get("/", defaultRoute);
 app.get("/other", otherRoute);
 
-app.listen(3000,
-           () => console.log("Server running on port 3000"));
+app.listen(port,
+           () => console.log(`Server running on port ${port}`));
 
 //
 // Your code goes below here
 //
 
 /**
- * This is the method that handles the default route for this web
+ * This is the function that handles the default route for this web
  * server. It can accept URL params named "q" and "u".
  *
  * From a client side, sample URL could look like:
@@ -30,7 +32,7 @@ function defaultRoute(request, response) {
 }
 
 /**
- * This is the method that handles the other route for this web
+ * This is the function that handles the other route for this web
  * server. It can accept URL params named "loc".
  *
  * From a client side, sample URL could look like:
@@ -50,4 +52,3 @@ function otherRoute(request, response) {
   console.log(result);
   response.send(result);
 }
-
