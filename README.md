@@ -1,6 +1,11 @@
 # homefinanceapp
 todo 
 
+# Links to run the app
+- https://homefinanceapp.herokuapp.com/?q=monkey&u=maret
+- http://homefinanceapp.herokuapp.com/other/?loc=94301
+- https://homefinanceapp.herokuapp.com/weather/?zip=94301
+
 # Heroku
 - [Dashboard](https://dashboard.heroku.com/apps/homefinanceapp/settings)
 - [git remote](https://git.heroku.com/homefinanceapp.git)
