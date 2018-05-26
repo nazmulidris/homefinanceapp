@@ -1,10 +1,20 @@
-# homefinanceapp
-todo 
+# webserversample
+This is a node project that provides examples of how Express and NodeJS can be
+used to create web services, and serve static content. This project can be
+deployed to Heroku as well.
+
+# Instructions to run the project
+After cloning this repo, you can run it by typing the following at the command
+prompt.
+```
+npm install
+npm start
+```
 
 # Links to run the app
-- https://homefinanceapp.herokuapp.com/?q=monkey&u=maret
-- http://homefinanceapp.herokuapp.com/other/?loc=94301
-- https://homefinanceapp.herokuapp.com/weather/?zip=94301
+- https://webserversample.herokuapp.com/?q=monkey&u=maret
+- http://webserversample.herokuapp.com/other/?loc=94301
+- https://webserversample.herokuapp.com/weather/?zip=94301
 
 # Heroku
 - [Dashboard](https://dashboard.heroku.com/apps/homefinanceapp/settings)
