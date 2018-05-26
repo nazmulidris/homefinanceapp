@@ -1,5 +1,5 @@
 {
-  "name": "homefinanceapp",
+  "name": "webserversample",
   "version": "1.0.0",
   "description": "Web app that visualizes Chase credit card data (in CSV format)",
   "main": "index.js",

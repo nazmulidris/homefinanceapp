@@ -11,14 +11,18 @@ npm install
 npm start
 ```
 
-# Links to run the app
+# Links to run the app (hosted on heroku)
+## Web service endpoints
 - https://webserversample.herokuapp.com/?q=monkey&u=maret
 - http://webserversample.herokuapp.com/other/?loc=94301
 - https://webserversample.herokuapp.com/weather/?zip=94301
 
-# Heroku
+## Static content hosting
+- todo
+
+# Heroku related things
 - [Dashboard](https://dashboard.heroku.com/apps/webserversample/settings)
-- [git remote](https://git.heroku.com/webserversample.git)
+- [git remote link](https://git.heroku.com/webserversample.git)
 
 # Related links
 - [Express Tutorial](https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters)
