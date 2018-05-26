@@ -17,8 +17,8 @@ npm start
 - https://webserversample.herokuapp.com/weather/?zip=94301
 
 # Heroku
-- [Dashboard](https://dashboard.heroku.com/apps/homefinanceapp/settings)
-- [git remote](https://git.heroku.com/homefinanceapp.git)
+- [Dashboard](https://dashboard.heroku.com/apps/webserversample/settings)
+- [git remote](https://git.heroku.com/webserversample.git)
 
 # Related links
 - [Express Tutorial](https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters)
