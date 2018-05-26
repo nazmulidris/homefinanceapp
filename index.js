@@ -8,6 +8,7 @@ const port    = process.env.PORT || 3000;
 
 app.get("/", defaultRoute);
 app.get("/other", otherRoute);
+app.get("/weather", weatherRoute);
 
 app.listen(port,
            () => console.log(`Server running on port ${port}`));
@@ -17,7 +18,7 @@ app.listen(port,
 //
 
 /**
- * This is the function that handles the default route for this web
+ * This is the function that handles the "default" route for this web
  * server. It can accept URL params named "q" and "u".
  *
  * From a client side, sample URL could look like:
@@ -32,7 +33,7 @@ function defaultRoute(request, response) {
 }
 
 /**
- * This is the function that handles the other route for this web
+ * This is the function that handles the "other" route for this web
  * server. It can accept URL params named "loc".
  *
  * From a client side, sample URL could look like:
@@ -51,4 +52,53 @@ function otherRoute(request, response) {
   let result = `[/other/]: Request with location "${loc}"`;
   console.log(result);
   response.send(result);
+}
+
+/**
+ * This is the function that handles the "weather" route for this web
+ * server. It can accept URL params named "zip".
+ *
+ * Here's an example of a real weather API:
+ * https://openweathermap.org/current
+ *
+ * From a client side, sample URL could look like:
+ * http://localhost:3000/weather/?zip=94301
+ */
+function weatherRoute(request, response) {
+  let zip = request.query.zip || '94301';
+  let key = "92ea5b462169ff227167a603039d404e";
+  let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}`;
+  
+  let fetch = require('node-fetch');
+  let _     = require('lodash');
+  
+  fetch(url)
+    .then(response => response.json())
+    .then(processWeatherData);
+  
+  function processWeatherData(jsonData) {
+    console.log(jsonData);
+    
+    if (!_.isNil(jsonData.main)) {
+      let currentTempK = jsonData.main.temp;
+      let currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
+      let currentTempC = currentTempK - 273.15;
+      let result       = {
+        name        : jsonData.name,
+        currentTempC: currentTempC,
+        currentTempF: currentTempF,
+      };
+      response.send(result);
+    }
+    else {
+      let result = {
+        name                : "unknown",
+        currentTempC        : "unknown",
+        currentTempF        : "unknown",
+        probableCauseOfError: jsonData.message,
+      };
+      response.send(result);
+    }
+  }
+  
 }
