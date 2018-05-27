@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2018 Nazmul Idris. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <!--Favicon-->
+    <link rel="icon" href="images/box.png">
+    <!--Custom Stylesheet-->
+    <link rel="stylesheet" href="css/styles.css"/>
+    <!--Web Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Noto+Sans" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Weather app</h1>
+    <p>Enter zip code:
+        <input id="zip" type="number" value="94301" minlength="5" maxlength="5">
+    </p>
+    <button onclick="getWeather()" type="button">Get current temperature</button>
+
+    <div id="temp"></div>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

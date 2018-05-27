@@ -117,9 +117,6 @@ function weatherHandler(request, response) {
     }
     else {
       result = {
-        name                : "unknown",
-        currentTempC        : "unknown",
-        currentTempF        : "unknown",
         probableCauseOfError: jsonData.message,
       };
     }

@@ -15,7 +15,7 @@ npm start
 ## Web service endpoints
 - https://webserversample.herokuapp.com/test1/?q=monkey&u=maret
 - https://webserversample.herokuapp.com/test2/?zip=94040
-- https://webserversample.herokuapp.com/weather/?loc=94043
+- https://webserversample.herokuapp.com/weather/?zip=94043
 
 ## Static content hosting
 - https://webserversample.herokuapp.com
