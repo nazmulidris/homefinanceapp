@@ -13,12 +13,12 @@ npm start
 
 # Links to run the app (hosted on heroku)
 ## Web service endpoints
-- https://webserversample.herokuapp.com/?q=monkey&u=maret
-- http://webserversample.herokuapp.com/other/?loc=94301
-- https://webserversample.herokuapp.com/weather/?zip=94301
+- https://webserversample.herokuapp.com/test1/?q=monkey&u=maret
+- https://webserversample.herokuapp.com/test2/?zip=94040
+- https://webserversample.herokuapp.com/weather/?loc=94043
 
 ## Static content hosting
-- todo
+- https://webserversample.herokuapp.com
 
 # Heroku related things
 - [Dashboard](https://dashboard.heroku.com/apps/webserversample/settings)

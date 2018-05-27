@@ -1,7 +1,7 @@
 {
   "name": "webserversample",
   "version": "1.0.0",
-  "description": "Web app that visualizes Chase credit card data (in CSV format)",
+  "description": "Node app that serves up static content, and a few web service endpoints",
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.3",
