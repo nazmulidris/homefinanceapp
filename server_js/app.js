@@ -47,29 +47,29 @@ app.listen(port,
 function test1Handler(request, response) {
   let query  = request.param("q");
   let user   = request.param("u");
-  let result = `[/]: Request from user "${user}", query is "${query}"`;
+  let result = `[/test1]: Request from user "${user}", query is "${query}"`;
   console.log(result);
   response.send(result);
 }
 
 /**
  * This is the function that handles the "other" route for this web
- * server. It can accept URL params named "loc".
+ * server. It can accept URL params named "zip".
  *
  * From a client side, sample URL could look like:
- * http://localhost:3000/other/?loc=94301
+ * http://localhost:3000/other/?zip=94301
  */
 function test2Handler(request, response) {
-  let loc = request.param("loc");
-  switch (loc) {
+  let zip = request.param("zip");
+  switch (zip) {
     case "94301":
-      loc = "Palo Alto";
+      zip = "Palo Alto";
       break;
     case "94040":
-      loc = "Mountain View";
+      zip = "Mountain View";
       break;
   }
-  let result = `[/other/]: Request with location "${loc}"`;
+  let result = `[/test2/]: Request with location "${zip}"`;
   console.log(result);
   response.send(result);
 }
@@ -97,7 +97,9 @@ function weatherHandler(request, response) {
     .then(processWeatherData);
   
   function processWeatherData(jsonData) {
-    console.log(jsonData);
+    console.log("processWeatherData() results:" + JSON.stringify(jsonData, null, 2));
+  
+    let result = {};
     
     if (!_.isNil(jsonData.main)) {
       let currentTempK = jsonData.main.temp;
@@ -107,22 +109,23 @@ function weatherHandler(request, response) {
                            ) * 1.8
                          ) + 32;
       let currentTempC = currentTempK - 273.15;
-      let result       = {
+      result           = {
         name        : jsonData.name,
         currentTempC: currentTempC,
         currentTempF: currentTempF,
       };
-      response.send(result);
     }
     else {
-      let result = {
+      result = {
         name                : "unknown",
         currentTempC        : "unknown",
         currentTempF        : "unknown",
         probableCauseOfError: jsonData.message,
       };
-      response.send(result);
     }
+  
+    console.log("[/weather]:" + JSON.stringify(result, null, 2));
+    response.send(result);
   }
   
 }

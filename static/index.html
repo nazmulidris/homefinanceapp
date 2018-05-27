@@ -34,5 +34,31 @@
         alt="Smiley Face"
         height="250px"
         width="250px"/>
+<ul>
+    <li>
+        <a href="test1/?q=monkey&u=maret"/>
+        <code>test1/</code> webservice endpoint</a>
+        - This simply prints out the values of the params (q, u)
+        that are passed in via the URL
+    </li>
+    <li>
+        <a href="test2/?zip=94040"/>
+        <code>test2/</code> webservice endpoint</a>
+        - This takes the value of the <code>zip</code> param that's passed via the URL
+        and if the value is "94301" or "94040" then it prints out city names, otherwise
+        it just prints out the zip code.
+    </li>
+    <li>
+        <a href="weather/?loc=94043"/>
+        <code>weather/</code> webservice endpoint</a>
+        - This takes the value of the param <code>zip</code> (which is a zip code) and
+        uses the <code>openweathermap.org</code> webservice in order to get the
+        current weather conditions for this zip code. Then it returns a JSON object
+        with the current temperature in Celsius and Fahrenheit, and the name of the
+        city. In case there's a mistake the the zip code format, it returns an JSON
+        object w/ error messages in it. Also, if no <code>zip</code> URL param is passed,
+        then it uses <code>94301</code>.
+    </li>
+</ul>
 </body>
 </html>
