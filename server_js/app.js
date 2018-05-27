@@ -22,9 +22,13 @@ const express = require("express");
 const app     = express();
 const port    = process.env.PORT || 3000;
 
-app.get("/", defaultRoute);
-app.get("/other", otherRoute);
-app.get("/weather", weatherRoute);
+// Get the web server to serve up static HTML content
+app.use('/', express.static('static'));
+
+// Setup web service end points (that map paths to functions)
+app.get("/test1", test1Handler);
+app.get("/test2", test2Handler);
+app.get("/weather", weatherHandler);
 
 app.listen(port,
            () => console.log(`Server running on port ${port}`));
@@ -40,7 +44,7 @@ app.listen(port,
  * From a client side, sample URL could look like:
  * http://localhost:3000/?q=monkey&u=maret
  */
-function defaultRoute(request, response) {
+function test1Handler(request, response) {
   let query  = request.param("q");
   let user   = request.param("u");
   let result = `[/]: Request from user "${user}", query is "${query}"`;
@@ -55,7 +59,7 @@ function defaultRoute(request, response) {
  * From a client side, sample URL could look like:
  * http://localhost:3000/other/?loc=94301
  */
-function otherRoute(request, response) {
+function test2Handler(request, response) {
   let loc = request.param("loc");
   switch (loc) {
     case "94301":
@@ -80,7 +84,7 @@ function otherRoute(request, response) {
  * From a client side, sample URL could look like:
  * http://localhost:3000/weather/?zip=94301
  */
-function weatherRoute(request, response) {
+function weatherHandler(request, response) {
   let zip = request.query.zip || '94301';
   let key = "92ea5b462169ff227167a603039d404e";
   let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${key}`;
@@ -97,9 +101,13 @@ function weatherRoute(request, response) {
     
     if (!_.isNil(jsonData.main)) {
       let currentTempK = jsonData.main.temp;
-      let currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
+      let currentTempF = (
+                           (
+                             currentTempK - 273.15
+                           ) * 1.8
+                         ) + 32;
       let currentTempC = currentTempK - 273.15;
-      let result = {
+      let result       = {
         name        : jsonData.name,
         currentTempC: currentTempC,
         currentTempF: currentTempF,
