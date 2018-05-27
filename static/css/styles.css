@@ -17,6 +17,7 @@
 body {
     font-family: 'Arimo', sans-serif;
     background-color: #f1f1f1;
+    font-size: 12pt;
 }
 h1 {
     font-family: 'Noto Sans', sans-serif;
@@ -25,4 +26,9 @@ h1 {
 p {
     border: 2pt solid powderblue;
     color: #383c4a;
+}
+
+code {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.23em;
 }
