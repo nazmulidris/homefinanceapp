@@ -13,18 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* Google web font imports */
 @import url(https://fonts.googleapis.com/css?family=Arimo|Noto+Sans|Cutive+Mono);
-
 
 body {
     font-family: 'Arimo', sans-serif;
     background-color: #f1f1f1;
     font-size: 12pt;
 }
+
 h1 {
     font-family: 'Noto Sans', sans-serif;
     color: #45a3e6;
 }
+
 p {
     border: 2pt solid powderblue;
     color: #383c4a;

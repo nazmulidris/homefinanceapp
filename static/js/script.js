@@ -34,23 +34,18 @@ function getWeather() {
  */
 function displayWeather(data) {
     let {name, currentTempC, currentTempF, probableCauseOfError} = data;
-    console.log(`Weather data:
+
+    let message = `Weather data:
         name=${name}, 
         C=${currentTempC}, 
         F=${currentTempF}, 
-        err=${probableCauseOfError}`
-    );
+        err=${przobableCauseOfError}`;
+
+    console.log(message);
+
     let div = document.createElement("DIV");
-
     div.setAttribute('id', 'temp');
-
-
-    div.textContent = `Weather data:
-        name=${name}, 
-        C=${currentTempC}, 
-        F=${currentTempF}, 
-        err=${probableCauseOfError}`;
-
+    div.textContent = message;
     let existingElementToReplace = document.querySelector('#temp');
     existingElementToReplace.replaceWith(div);
 

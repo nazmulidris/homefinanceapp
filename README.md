@@ -11,14 +11,26 @@ npm install
 npm start
 ```
 
+In order to run the app in development mode, you can install `nodemon` and use
+a different script to run the server. 
+
+```
+npm install -g nodemon
+npm run start-dev
+```
+
 # Links to run the app (hosted on heroku)
+## Static HTML content
+- https://webserversample.herokuapp.com
+
+## Web app
+- https://webserversample.herokuapp.com/weather.html
+
 ## Web service endpoints
 - https://webserversample.herokuapp.com/test1/?q=monkey&u=maret
 - https://webserversample.herokuapp.com/test2/?zip=94040
 - https://webserversample.herokuapp.com/weather/?zip=94043
 
-## Static content hosting
-- https://webserversample.herokuapp.com
 
 # Heroku related things
 - [Dashboard](https://dashboard.heroku.com/apps/webserversample/settings)
