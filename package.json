@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nazmulidris/homefinanceapp.git"
+    "url": "git+https://github.com/nazmulidris/webserversample.git"
   },
   "author": "Nazmul & Maret Idris",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/nazmulidris/homefinanceapp/issues"
+    "url": "https://github.com/nazmulidris/webserversample/issues"
   },
-  "homepage": "https://github.com/nazmulidris/homefinanceapp#readme"
+  "homepage": "https://github.com/nazmulidris/webserversample#readme"
 }
